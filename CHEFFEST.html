@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="../media/FOOD_LOGO.svg"
+        type="image/x-icon">
+
+    <title>CHEFFEST - Delicious Food for Everyone</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", serif;
+        }
+
+        body {
+            font-family:"Montserrat", serif;
+            line-height: 1.6;
+            color: white;
+            background-color: black;
+        }
+
+        /* Header styles */
+        header {
+            background-color: rgb(88, 14, 14);
+            color: #fff;
+            padding: 1rem;
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd166;
+            text-decoration: underline;
+        }
+
+        /* Main content styles */
+        main {
+            margin-top: 60px;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: black;
+            border-radius: 5px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/6a/48/4a/indulge-in-the-exquisite.jpg?w=600&h=400&s=1);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffd166;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ffc233;
+        }
+
+        /* Popular dishes section styles */
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .dish-card {
+            background-color: #363030;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dish-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .dish-card h3, .dish-card p {
+            padding: 0.5rem 1rem;
+        }
+
+        .dish-card p {
+            color: #f7f5f5;
+        }
+
+        /* About Us section styles */
+        .about-us p {
+            margin-bottom: 1rem;
+        }
+
+        /* Contact form styles */
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #a81b1b;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8f1a1a;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: rgb(88, 14, 14);
+            background-color:  rgb(88, 14, 14);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        .food_logo{
+            height: 100px;
+            width: 100px;
+            border-radius: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <img class="food_logo" src="../media/FOOD_LOGO.svg" alt="">
+            <div class="logo"><span style="color: red;">CHEF</span>FEST.</div>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#dishes">DISHES</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to <span style="color: red;">CHEF</span>FEST.</h1>
+            <p>Discover delicious food for every taste</p>
+            <a href="#dishes" class="cta-button">Explore Our Menu</a>
+        </section>
+
+        <section id="dishes">
+            <h2>DISHES</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2022/01/Creamy-Bacon-Pasta-SQ.jpg" alt="Spaghetti Carbonara">
+                    <h3>Spaghetti Carbonara</h3>
+                    <p>Creamy pasta with bacon and parmesan</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.foodandwine.com/thmb/7BpSJWDh1s-2M2ooRPHoy07apq4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mozzarella-pizza-margherita-FT-RECIPE0621-11fa41ceb1a5465d9036a23da87dd3d4.jpg" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Classic pizza with tomato, mozzarella, and basil</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://arteflame.com/cdn/shop/articles/Chicken_Tikka_Masala.webp?v=1711659736&width=1600" alt="Chicken Tikka Masala">
+                    <h3>Chicken Tikka Masala</h3>
+                    <p>Tender chicken in a rich, spiced tomato cream sauce</p>
+                </div>
+                <div class="dish-card">
+                    <img src="https://www.recipetineats.com/tachyon/2016/05/Caesar-Salad_7-SQ.jpg" alt="Caesar Salad">
+                    <h3>Caesar Salad</h3>
+                    <p>Crisp romaine lettuce with our homemade Caesar dressing</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-us">
+            <h2>ABOUT US</h2>
+            <p>Tasty Bites is a family-owned restaurant that has been serving delicious meals since 1995. We take pride in using fresh, locally-sourced ingredients to create mouth-watering dishes from around the world.</p>
+            <p>Our passionate chefs are constantly innovating and creating new recipes to tantalize your taste buds. Whether you're in the mood for comfort food or looking to try something new, we have something for everyone at Tasty Bites.</p>
+            <p>Come join us for a memorable dining experience filled with great food, warm hospitality, and a cozy atmosphere.</p>
+            <p>Tasty Bites is a family-owned restaurant that has been serving delicious meals since 1995. We take pride in using fresh, locally-sourced ingredients to create mouth-watering dishes from around the world.</p>
+            <p>Our passionate chefs are constantly innovating and creating new recipes to tantalize your taste buds. Whether you're in the mood for comfort food or looking to try something new, we have something for everyone at Tasty Bites.</p>
+            <p>Come join us for a memorable dining experience filled with great food, warm hospitality, and a cozy atmosphere.</p>
+            <p>Tasty Bites is a family-owned restaurant that has been serving delicious meals since 1995. We take pride in using fresh, locally-sourced ingredients to create mouth-watering dishes from around the world.</p>
+            <p>Our passionate chefs are constantly innovating and creating new recipes to tantalize your taste buds. Whether you're in the mood for comfort food or looking to try something new, we have something for everyone at Tasty Bites.</p>
+            <p>Come join us for a memorable dining experience filled with great food, warm hospitality, and a cozy atmosphere.</p>
+        </section>
+
+        <section id="contact">
+            <h2>CONTACT US</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 <span style="color: red;">CHEF</span>FEST. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
